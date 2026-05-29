@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MediaLyze</Name>
+  <Repository>ghcr.io/frederikemmer/medialyze:latest</Repository>
+  <Registry>https://ghcr.io</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/frederikemmer/MediaLyze</Support>
+  <Project>https://github.com/frederikemmer/MediaLyze</Project>
+  <ReadMe/>
+  <Overview>&#13;
+MediaLyze analiza bibliotecas multimedia locales grandes usando ffprobe y muestra estad&#xED;sticas t&#xE9;cnicas en una interfaz web.&#13;
+El proyecto est&#xE1; orientado al an&#xE1;lisis, no a la modificaci&#xF3;n de archivos, por lo que los medios deben montarse en solo lectura.&#13;
+- /config: contiene la base de datos SQLite (*.db) con la configuraci&#xF3;n.&#13;
+  </Overview>
+  <Category>MediaApp:Tools MediaServer:Management Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/frederikemmer/MediaLyze/raw/main/frontend/public/favicon.ico</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1780020331</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8080" Default="8888" Mode="tcp" Description="Puerto externo para la interfaz web." Type="Port" Display="always" Required="true" Mask="false">8888</Config>
+  <Config Name="Timezone" Target="TZ" Default="Europe/Madrid" Mode="" Description="Zona horaria del contenedor." Type="Variable" Display="always" Required="false" Mask="false">Europe/Madrid</Config>
+  <Config Name="Config (DB + config)" Target="/config" Default="/mnt/user/appdata/medialyze/config" Mode="rw" Description="Configuraci&#xF3;n y base de datos principal (*.db)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/medialyze/con>
+  <Config Name="Movies Root" Target="/media/peliculas" Default="/mnt/user/peliculas" Mode="ro" Description="Ra&#xED;z de pel&#xED;culas (RO)." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/peliculas</Config>
+  <Config Name="Shows Root" Target="/media/series" Default="/mnt/user/series" Mode="ro" Description="Ra&#xED;z de series (RO)." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/series</Config>
+  <TailscaleStateDir/>
+</Container>
